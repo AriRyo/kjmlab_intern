@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "gymnasium-tutorial"
+version = "0.1.0"
+description = ""
+authors = ["AriRyo <come11926323@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+gymnasium = {extras = ["mujoco"], version = "^0.29.1"}
+jupyterlab = "^4.2.3"
+notebook = "^7.2.1"
+torch = {version = "2.0.1+cu117", source = "pytorch"}
+torchvision = {version = "0.15.2+cu117", source = "pytorch"}
+torchaudio = {version = "2.0.2", source = "pytorch"}
+gym = "^0.26.2"
+matplotlib = "^3.9.1"
+pyglet = "^2.0.16"
+wheel = "^0.43.0"
+numpy = "1.26.3"
+mujoco-py = "^2.1.2.14"
+mujoco = "2.3.7"
+moviepy = "^1.0.3"
+
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu117"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
