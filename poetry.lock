@@ -893,6 +893,21 @@ testing = ["box2d-py (==2.3.5)", "imageio (>=2.14.1)", "lz4 (>=3.1.0)", "matplot
 toy-text = ["pygame (==2.1.0)"]
 
 [[package]]
+name = "gym-gridworlds"
+version = "0.0.2"
+description = "Gridworlds environments for OpenAI gym."
+optional = false
+python-versions = "*"
+files = [
+    {file = "gym_gridworlds-0.0.2-py3-none-any.whl", hash = "sha256:036641ef9aaafa8ced1e279ead9df614c5b2c004228f96ba600012fd267a7568"},
+    {file = "gym_gridworlds-0.0.2.tar.gz", hash = "sha256:01779d99c51b86325de0ff4e3361bb47f5f6f76d94698bb302ed531bbb91a7d4"},
+]
+
+[package.dependencies]
+gym = "*"
+numpy = "*"
+
+[[package]]
 name = "gym-notices"
 version = "0.0.8"
 description = "Notices for gym"
@@ -3349,4 +3364,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "00a0dd3782d6acdc4294ca653f7b37716ac03f1302c7d71070741f91965dc7c2"
+content-hash = "34420ca27dbb1d53fd7212c1ec92d065ac5b7053f399451556e005798990caf2"
