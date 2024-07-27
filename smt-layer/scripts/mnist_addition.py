@@ -10,7 +10,6 @@ import random
 import z3
 import click
 from tqdm import tqdm
-
 import torch
 import torchvision
 import torch.nn as nn
@@ -120,9 +119,9 @@ class MNISTAdder(nn.Module):
             solverop='smt' if not use_maxsmt else 'maxsmt')
     
     def forward(self, x, return_sat=True, return_feats=False, do_maxsat=False):
-        out1 = self.extractor(x[0])
-        out2 = self.extractor(x[1])
-        combined = torch.cat([out1, out2], dim=1)
+        out1 = self.extractor(x[0]) # dim=4
+        out2 = self.extractor(x[1]) # dim=4
+        combined = torch.cat([out1, out2], dim=1) # dim=8
         if return_feats:
             return combined
         else:
@@ -333,7 +332,6 @@ def main(
     maxsat_forward=False,
     maxsat_backward=False
 ):
-
     test_label_pairs = list(itertools.product(list(range(0,10)), repeat=2))
     if pct <= 10:
         train_label_pairs = [(0,0), (1,1), (2,2), (3,3), (4,4), (5,5), (6,6), (7,7), (8,8), (9,9)]
@@ -372,7 +370,8 @@ def main(
         test_accs.append(test_acc)
         times.append(elapsed)
 
-        print('\n[{} of {trials}]: train={:.4}, test={:.4}, time={:.4}\n'.format(i, train_acc, test_acc, elapsed))
+        # print('\n[{} of {trials}]: train={:.4}, test={:.4}, time={:.4}\n'.format(i, train_acc, test_acc, elapsed))
+        print('\n[' + str(i) + ']: train={:.4}, test={:.4}, time={:.4}\n'.format(i, train_acc, test_acc, elapsed))
         print('-'*20)
 
     train_accs = np.array(train_accs)
