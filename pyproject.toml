@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "gymnasium-tutorial"
+name = "kjmlab"
 version = "0.1.0"
 description = ""
 authors = ["AriRyo <come11926323@gmail.com>"]
